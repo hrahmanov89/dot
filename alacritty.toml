@@ -1,0 +1,16 @@
+# themes from https://github.com/alacritty/alacritty-theme
+
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+
+[font]
+size = 17
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+decorations = "none"
+
+[window.padding]
+x = 7
+y = 0

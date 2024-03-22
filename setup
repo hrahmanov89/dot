@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# This is the setup script for my config. The idea is to be able to run
+# this after cloning the repo on a Mac or Ubuntu (WSL) system and be up
+# and running very quickly.
+
+# create directories
+export XDG_CONFIG_HOME="$HOME"/.config
+mkdir -p "$XDG_CONFIG_HOME"/alacritty
+mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
+mkdir -p "$XDG_CONFIG_HOME"/k9s
+# mkdir -p "$XDG_CONFIG_HOME"/wezterm
+
+curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+
+# Symbolic links
+
+# ln -s ./.amethyst.yml "$HOME"/.amethyst.yml
+ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
+ln -sf "$PWD/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
+ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
+ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
+ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
+
+
+# Packages
+
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install --cask alacritty
+
+brew install --cask amethyst
+
+
+
+# brew packages Mac
+# amethyst fzf nvim kubectl starship
+
+brew install tmux starship fzf neovim kubectl go openjdk fd git
+
+#TODO Add installation of zsh-syntax-highlight and zsh-autocomplete plugins
+
+
+
+
