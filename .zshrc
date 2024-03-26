@@ -1,4 +1,10 @@
 export XDG_CONFIG_HOME="$HOME"/.config
+autoload -Uz compinit
+compinit
+
+## Source additional local script which contain secrets
+
+source "$HOME/.local.sh"
 
 ## Shell variables
 
@@ -8,19 +14,17 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 ## Kubectl completion
-if which kubectl > /dev/null
+if type kubectl &> /dev/null
 then 	
-	autoload -Uz compinit
-	compinit
 	source <(kubectl completion zsh)
 fi
 
 
 ## Shell things
 if which starship > /dev/null; then eval "$(starship init zsh)"; fi
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source "$XDG_CONFIG_HOME"/.zsh/plugins/zsh-autosuggestion/zsh-autosuggestions.zsh
+source "$XDG_CONFIG_HOME"/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## 1Password SSH Agentg
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
