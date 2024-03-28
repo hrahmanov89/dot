@@ -10,7 +10,8 @@ mkdir -p "$XDG_CONFIG_HOME"/alacritty
 mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
 mkdir -p "$XDG_CONFIG_HOME"/k9s
 mkdir -p "$XDG_CONFIG_HOME"/.zsh/plugins
-# mkdir -p "$XDG_CONFIG_HOME"/wezterm
+mkdir -p "$XDG_CONFIG_HOME"/tmux
+
 
 curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
 
@@ -20,7 +21,7 @@ curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/cat
 ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 ln -sf "$PWD/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
-ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
+ln -sf "$PWD/.tmux.conf" "$XDG_CONFIG_HOME"/tmux/tmux.conf
 ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 
 
