@@ -40,7 +40,7 @@ brew install --cask amethyst
 # brew packages Mac
 # amethyst fzf nvim kubectl starship
 
-brew install tmux starship fzf neovim kubectl go openjdk fd git
+brew install tmux starship fzf neovim kubectl go openjdk fd git nvm
 
 # ZSH autosuggest and synax-highlight install
 
