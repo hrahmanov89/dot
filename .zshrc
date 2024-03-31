@@ -41,6 +41,8 @@ alias kibrit="cd $HOME/Documents/kibrit"
 alias repos="cd $HOME/repos"
 alias dot="cd $HOME/repos/github.com/hrahmanov89/dot"
 alias 12go="cd $HOME/Documents/12go"
+alias sb="/Users/hrahmanov/Library/CloudStorage/GoogleDrive-shirbala@gmail\.com/My\ Drive/my-sb/rhz"
+alias vim="nvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm

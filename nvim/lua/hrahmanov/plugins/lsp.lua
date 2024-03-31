@@ -11,6 +11,8 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "windwp/nvim-autopairs",
+        "windwp/nvim-ts-autotag"
     },
 
     config = function()
@@ -22,6 +24,7 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+        require("nvim-autopairs").setup({})
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -61,16 +64,18 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
+                ["<C-u>"] = cmp.mapping.scroll_docs(4), -- scroll up preview
+      					["<C-d>"] = cmp.mapping.scroll_docs(-4), -- scroll down preview
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
+                ["<C-space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
-            }, {
                 { name = 'buffer' },
+            }, {
+                { name = 'luasnip' }, -- For luasnip users.
             })
         })
 
