@@ -15,3 +15,7 @@ startup_mode= "SimpleFullscreen"
 [window.padding]
 x = 7
 y = 0
+
+[keyboard]
+
+bindings=[{ key= "Back", mods= "Control", chars= "\u0017" }]

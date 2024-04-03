@@ -35,8 +35,6 @@ brew install --cask alacritty
 
 brew install --cask amethyst
 
-
-
 # brew packages Mac
 # amethyst fzf nvim kubectl starship
 
@@ -45,8 +43,4 @@ brew install tmux starship fzf neovim kubectl go openjdk fd git nvm
 # ZSH autosuggest and synax-highlight install
 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git "$XDG_CONFIG_HOME"/.zsh/plugins/zsh-autosuggestion
-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$XDG_CONFIG_HOME"/.zsh/plugins/zsh-syntax-highlighting
-
-
-
