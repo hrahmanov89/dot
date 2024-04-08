@@ -23,7 +23,7 @@ ln -sf "$PWD/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 ln -sf "$PWD/.zshrc" "$HOME"/.zshrc
 ln -sf "$PWD/.tmux.conf" "$XDG_CONFIG_HOME"/tmux/tmux.conf
 ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
-
+ln -sf "$PWD/scripts/tmux-sessionizer" ~/.local/bin/tmux-sessionizer 
 
 # Packages
 
