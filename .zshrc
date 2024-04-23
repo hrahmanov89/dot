@@ -45,7 +45,10 @@ alias dot="cd $HOME/repos/github.com/hrahmanov89/dot"
 alias 12go="cd $HOME/Documents/12go"
 alias sb="cd /Users/hrahmanov/Google\ Drive/My\ Drive/my-sb/rhz"
 alias vim="nvim"
-alias ls="ls -lah"
+alias ls="ls --color=auto -lah"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
