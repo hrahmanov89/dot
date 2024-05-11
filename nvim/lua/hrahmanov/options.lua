@@ -30,7 +30,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-
 -- Disable showing the mode below the statusline
 vim.opt.showmode = false
 
