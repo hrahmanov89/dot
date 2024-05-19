@@ -106,7 +106,6 @@ return {
 				"helm_ls",
 				"jinja_lsp",
 				"taplo",
-				"black",
 			},
 			handlers = {
 				function(server_name)
@@ -132,6 +131,14 @@ return {
 				["terraformls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.terraformls.setup({
+
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
+				["gopls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.gopls.setup({
 
 						on_attach = on_attach,
 						capabilities = capabilities,
@@ -199,8 +206,8 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
+				{ name = "nvim_lsp" },
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),

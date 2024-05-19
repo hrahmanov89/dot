@@ -2,14 +2,15 @@ return {
 	"nvimtools/none-ls.nvim",
 	config = function()
 		local null_ls = require("null-ls")
+		local augroup = vim.api.nvim_create_augroup("NoneLS", {})
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.diagnostics.ansiblelint,
-				null_ls.builtins.formatting.terraform_fmt,
-				null_ls.builtins.diagnostics.terraform_validate,
 				null_ls.builtins.formatting.gofumpt,
 				null_ls.builtins.formatting.goimports,
+				null_ls.builtins.formatting.terraform_fmt,
+				null_ls.builtins.diagnostics.ansiblelint,
+				null_ls.builtins.diagnostics.terraform_validate,
 				null_ls.builtins.diagnostics.golangci_lint,
 			},
 			on_attach = function(client, bufnr)
