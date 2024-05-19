@@ -13,6 +13,7 @@ return {
 		"j-hui/fidget.nvim",
 		"windwp/nvim-autopairs",
 		"windwp/nvim-ts-autotag",
+		"rafamadriz/friendly-snippets",
 	},
 
 	config = function()
@@ -189,11 +190,12 @@ return {
 		})
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
+		require("luasnip.loaders.from_vscode").lazy_load()
+		local ls = require("luasnip")
 		cmp.setup({
 			snippet = {
 				expand = function(args)
-					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+					ls.lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -226,5 +228,17 @@ return {
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 		})
+
+		vim.keymap.set({ "i", "s" }, "<c-k>", function()
+			if ls.expand_or_jumpable() then
+				ls.expand_or_jump()
+			end
+		end, { silent = true })
+
+		vim.keymap.set({ "i", "s" }, "<c-j>", function()
+			if ls.jumpable(-1) then
+				ls.jump(-1)
+			end
+		end, { silent = true })
 	end,
 }
