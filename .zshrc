@@ -55,4 +55,10 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+## FZF history
 
+source <(fzf --zsh)
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
