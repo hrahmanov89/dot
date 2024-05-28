@@ -11,7 +11,7 @@ source "$HOME/.local.sh"
 ## Shell variables
 
 set -o vi
-
+export TERM="xterm-256color"
 export VISUAL=nvim
 export EDITOR=nvim
 
