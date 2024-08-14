@@ -21,3 +21,6 @@ y = 0
 [keyboard]
 
 bindings=[{ key= "Back", mods= "Control", chars= "\u0017" }]
+
+[mouse]
+bindings=[{ mouse= "Right", action= "Paste" }]
