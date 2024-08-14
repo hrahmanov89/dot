@@ -208,6 +208,7 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 			}),
 			sources = cmp.config.sources({
+				{ name = "codeium" }, -- snippets
 				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" },
 				{ name = "buffer" }, -- text within current buffer
