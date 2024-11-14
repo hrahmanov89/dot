@@ -1,7 +1,7 @@
 export XDG_CONFIG_HOME="$HOME"/.config
 autoload -Uz compinit
 compinit
-
+source <(fzf --zsh)
 
 export PATH=$PATH":/Users/hrahmanov/.local/bin"
 ## Source additional local script which contain secrets

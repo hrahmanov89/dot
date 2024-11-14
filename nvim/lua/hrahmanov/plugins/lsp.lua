@@ -145,6 +145,14 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				["hclfmt"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.hclfmt.setup({
+
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
 				["yamlls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.yamlls.setup({
