@@ -98,6 +98,7 @@ return {
 				"gofumpt",
 				"gopls",
 				"goimports",
+				"rust-analyzer",
 				"terraformls",
 				"tflint",
 				"yamlls",
@@ -107,6 +108,7 @@ return {
 				"helm_ls",
 				"jinja_lsp",
 				"taplo",
+				"hclfmt",
 			},
 			handlers = {
 				function(server_name)
@@ -143,6 +145,21 @@ return {
 
 						on_attach = on_attach,
 						capabilities = capabilities,
+					})
+				end,
+				["rust-analyzer"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.rust_analyzer.setup({
+
+						on_attach = on_attach,
+						capabilities = capabilities,
+						settings = {
+							["rust-analyzer"] = {
+								cargo = {
+									allFeatures = true,
+								},
+							},
+						},
 					})
 				end,
 				["hclfmt"] = function()
