@@ -49,6 +49,7 @@ alias ls="ls --color=auto -lah"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias diff='nvim -d'
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 export NVM_DIR="$HOME/.nvm"

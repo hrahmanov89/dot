@@ -147,29 +147,6 @@ return {
 						capabilities = capabilities,
 					})
 				end,
-				["rust-analyzer"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.rust_analyzer.setup({
-
-						on_attach = on_attach,
-						capabilities = capabilities,
-						settings = {
-							["rust-analyzer"] = {
-								cargo = {
-									allFeatures = true,
-								},
-							},
-						},
-					})
-				end,
-				["hclfmt"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.hclfmt.setup({
-
-						on_attach = on_attach,
-						capabilities = capabilities,
-					})
-				end,
 				["yamlls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.yamlls.setup({
