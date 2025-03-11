@@ -143,13 +143,21 @@ return {
           local lspconfig = require("lspconfig")
           lspconfig.jinja_lsp.setup({
 
-            on_attach = on_attach,
-            capabilities = capabilities,
-          })
-        end,
-        ["gopls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.gopls.setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
+				["pylsp"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.gopls.setup({
+
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
+				["yamlls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.yamlls.setup({
 
             on_attach = on_attach,
             capabilities = capabilities,
