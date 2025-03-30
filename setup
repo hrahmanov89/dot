@@ -14,6 +14,7 @@ mkdir -p "$XDG_CONFIG_HOME"/tmux
 
 
 curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/rose-pine/alacritty/raw/main/dist/rose-pine.toml
 
 # Symbolic links
 
