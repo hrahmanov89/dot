@@ -7,7 +7,6 @@ function ColorMyPencils(color)
 end
 
 return {
-
 	{
 		"erikbackman/brightburn.vim",
 	},

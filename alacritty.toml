@@ -1,6 +1,6 @@
 # themes from https://github.com/alacritty/alacritty-theme
 
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/themes/rose-pine.toml"]
 [env]
 TERM = "xterm-256color"
 
