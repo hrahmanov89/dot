@@ -13,6 +13,8 @@ family = "Hack Nerd Font Mono"
 [window]
 decorations = "none"
 startup_mode= "SimpleFullscreen"
+blur = true
+opacity = 0.8
 
 [window.padding]
 x = 7
