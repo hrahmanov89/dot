@@ -2,6 +2,7 @@ export XDG_CONFIG_HOME="$HOME"/.config
 autoload -Uz compinit
 compinit
 source <(fzf --zsh)
+set -o ignoreeof
 
 export PATH=$PATH":/Users/hrahmanov/.local/bin"
 ## Source additional local script which contain secrets
@@ -43,6 +44,7 @@ alias kibrit="cd $HOME/Documents/kibrit"
 alias repos="cd $HOME/repos"
 alias dot="cd $HOME/repos/github.com/hrahmanov89/dot"
 alias 12go="cd $HOME/Documents/12go"
+alias reglu="cd $HOME/Documents/reglu"
 alias sb="cd /Users/hrahmanov/Google\ Drive/My\ Drive/my-sb/rhz"
 alias vim="nvim"
 alias ls="ls --color=auto -lah"
@@ -51,12 +53,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='nvim -d'
 
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 export NVM_DIR="$HOME/.nvm"
-
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-## FZF history
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 source <(fzf --zsh)
 HISTFILE=~/.zsh_history
@@ -69,3 +68,7 @@ if [ -f '/Users/hrahmanov/.local/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hrahmanov/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hrahmanov/.local/google-cloud-sdk/completion.zsh.inc'; fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Docker build variables
+export DOCKER_DEFAULT_PLATFORM=linux/amd64

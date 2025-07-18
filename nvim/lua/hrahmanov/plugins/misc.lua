@@ -13,7 +13,6 @@ return {
         null_ls.builtins.formatting.terraform_fmt,
         null_ls.builtins.diagnostics.ansiblelint,
         null_ls.builtins.diagnostics.terraform_validate,
-        null_ls.builtins.diagnostics.golangci_lint,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
