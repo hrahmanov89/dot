@@ -1,0 +1,21 @@
+theme = Rose Pine
+
+fullscreen = true
+window-decoration = none
+macos-non-native-fullscreen = true
+
+font-family = UbuntuMono Nerd Font Mono
+font-style-bold-italic = true
+font-size = 24
+
+
+
+background = #000000
+background-opacity = 0.96
+
+cursor-color = #FF66B3
+cursor-style = block
+cursor-opacity = 0.88
+cursor-style-blink = false
+
+shell-integration-features = no-cursor

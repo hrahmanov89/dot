@@ -27,6 +27,8 @@ return {
       "ansiblels",
       "bashls",
       "jinja_lsp",
+      "python_lsp_server",
+      "black",
     }
     require("mason-lspconfig").setup({
       ensure_installed = ensure_installed,
