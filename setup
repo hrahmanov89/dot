@@ -6,20 +6,14 @@
 
 # create directories
 export XDG_CONFIG_HOME="$HOME"/.config
-mkdir -p "$XDG_CONFIG_HOME"/alacritty
 mkdir -p "$XDG_CONFIG_HOME"/ghostty
-mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
 mkdir -p "$XDG_CONFIG_HOME"/k9s
 mkdir -p "$XDG_CONFIG_HOME"/.zsh/plugins
 mkdir -p "$XDG_CONFIG_HOME"/tmux
 
 
-curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
-curl -LO --output-dir "$XDG_CONFIG_HOME"/alacritty/themes https://github.com/rose-pine/alacritty/raw/main/dist/rose-pine.toml
-
 # Symbolic links
 
-# ln -s ./.amethyst.yml "$HOME"/.amethyst.yml
 ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 ln -sf "$PWD/ghostty" "$XDG_CONFIG_HOME"/ghostty/config
 ln -sf "$PWD/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
@@ -33,8 +27,6 @@ ln -sf "$PWD/scripts/tmux-sessionizer" ~/.local/bin/tmux-sessionizer
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew install --cask alacritty
 
 brew install --cask ghostty
 
