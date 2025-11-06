@@ -4,7 +4,7 @@ fullscreen = true
 window-decoration = none
 macos-non-native-fullscreen = true
 
-font-family = UbuntuMono Nerd Font Mono
+font-family = Inconsolata Nerd Font Mono
 font-style-bold-italic = true
 font-size = 24
 
@@ -19,3 +19,9 @@ cursor-opacity = 0.88
 cursor-style-blink = false
 
 shell-integration-features = no-cursor
+
+# Alt+F / Alt+B → send ESC f / ESC b (classic Readline word jumps)
+keybind = unconsumed:alt+f=esc:f
+keybind = unconsumed:alt+b=esc:b
+
+keybind = unconsumed:ctrl+backspace=text:\x17
