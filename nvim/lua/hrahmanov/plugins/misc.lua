@@ -9,7 +9,6 @@ return {
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.hclfmt,
-        null_ls.builtins.formatting.ruff,
         null_ls.builtins.formatting.terraform_fmt,
         null_ls.builtins.diagnostics.ansiblelint,
         null_ls.builtins.diagnostics.terraform_validate,

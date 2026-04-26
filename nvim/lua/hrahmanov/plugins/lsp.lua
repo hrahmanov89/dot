@@ -34,14 +34,57 @@ return {
       ensure_installed = ensure_installed,
     })
 
-    for _, ei in ipairs(ensure_installed) do
-      vim.lsp.enable(ei)
-    end
-
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     vim.lsp.config("*", {
       capabilities = capabilities,
     })
+
+    vim.lsp.config("yamlls", {
+      settings = {
+        yaml = {
+          validate = true,
+          completion = true,
+          format = { enable = true },
+          schemaStore = {
+            enable = false,
+            url = "",
+          },
+          schemas = {
+            ["https://raw.githubusercontent.com/argoproj/argo-schema-generator/main/schema/argo_all_k8s_kustomize_schema.json"] = {
+              "apps/*.yaml",
+              "apps/*.yml",
+            },
+            ["https://raw.githubusercontent.com/argoproj/argo-schema-generator/main/schema/argo_cd_kustomize_schema.json"] = {
+              "argocd/**/*.yaml",
+              "argocd/**/*.yml",
+              "applications/**/*.yaml",
+              "applications/**/*.yml",
+              "appsets/**/*.yaml",
+              "appsets/**/*.yml",
+            },
+            kubernetes = {
+              "k8s/**/*.yaml",
+              "k8s/**/*.yml",
+              "manifests/**/*.yaml",
+              "manifests/**/*.yml",
+              "*.k8s.yaml",
+              "*.k8s.yml",
+            },
+            ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+            ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+            ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/**/*.{yml,yaml}",
+            ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+            ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+            ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+            ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+          },
+        },
+      }
+    })
+
+    for _, ei in ipairs(ensure_installed) do
+      vim.lsp.enable(ei)
+    end
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
