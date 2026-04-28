@@ -23,5 +23,6 @@ shell-integration-features = no-cursor
 # Alt+F / Alt+B → send ESC f / ESC b (classic Readline word jumps)
 keybind = unconsumed:alt+f=esc:f
 keybind = unconsumed:alt+b=esc:b
+keybind = shift+enter=send_text:\x1b[13;2u
 
 keybind = unconsumed:ctrl+backspace=text:\x17

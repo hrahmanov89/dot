@@ -72,3 +72,4 @@ if [ -f '/Users/hrahmanov/.local/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 # Docker build variables
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
